@@ -1,58 +1,117 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# My Reading List
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A simple Laravel web application to manage books and track reading progress.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- View all books.
+- Add books with title, author, and reading status.
+- Edit existing book details.
+- Delete books with a confirmation message.
+- Filter books by reading status.
+- Form validation for required fields.
+- No login required.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Technologies Used
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP
+- Laravel
+- SQLite
+- HTML
+- Blade Templates
+- Git and GitHub
 
-## Learning Laravel
+## Installation and Setup
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Prerequisites
+- PHP
+- Composer
+- Laravel
+- SQLite
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Steps
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+1. Clone the repository:
 
-## Agentic Development
+   ```bash
+   git clone YOUR_GITHUB_REPOSITORY_URL
+   ```
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+2. Navigate to the project folder:
 
-```bash
-composer require laravel/boost --dev
+   ```bash
+   cd reading-list
+   ```
 
-php artisan boost:install
-```
+3. Install dependencies:
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+   ```bash
+   composer install
+   ```
 
-## Contributing
+4. Create the environment file:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   ```powershell
+   Copy-Item .env.example .env
+   ```
 
-## Code of Conduct
+5. Generate the application key:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ```bash
+   php artisan key:generate
+   ```
 
-## Security Vulnerabilities
+6. Configure SQLite in the `.env` file:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   ```env
+   DB_CONNECTION=sqlite
+   ```
 
-## License
+7. Create the SQLite database if it does not exist:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   ```powershell
+   New-Item database/database.sqlite -ItemType File
+   ```
+
+8. Run database migrations:
+
+   ```bash
+   php artisan migrate
+   ```
+
+9. Start the development server:
+
+   ```bash
+   php artisan serve
+   ```
+
+10. Open the application:
+
+    http://127.0.0.1:8000/books
+
+## How to Use
+
+1. Click **Add a New Book**.
+2. Enter the book title and author.
+3. Select a reading status:
+   - To Read
+   - Reading
+   - Finished
+4. Click **Add Book** to save it.
+5. Use **Edit** to update book information.
+6. Use **Delete** to remove a book after confirmation.
+7. Use the status filter to view books based on reading progress.
+
+## AI Usage
+
+ChatGPT was used during development for:
+- Understanding Laravel concepts and MVC architecture.
+- Guidance with routes, controllers, and Blade templates.
+- Troubleshooting errors.
+- Understanding form validation and database operations.
+
+The suggested code was reviewed, adapted, and tested during development.
+
+## Project Purpose
+
+This project was developed as part of a Laravel web development assignment to practise CRUD operations, database migrations, routing, controllers, Blade templates, form validation, and Git version control.
