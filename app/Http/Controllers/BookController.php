@@ -7,12 +7,16 @@ use App\Models\Book;
 
 class BookController extends Controller
 {
-    public function index()
-    {
-        $books = Book::all();
+    public function index(Request $request)
+{
+    $status = $request->query('status');
 
-        return view('books.index', compact('books'));
-    }
+    $books = Book::when($status, function ($query) use ($status) {
+        $query->where('status', $status);
+    })->get();
+
+    return view('books.index', compact('books', 'status'));
+}
 
     public function create()
     {

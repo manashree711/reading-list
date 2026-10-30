@@ -6,7 +6,27 @@
 <body>
 
     <h1>My Reading List</h1>
+    <form action="{{ route('books.index') }}" method="GET">
+    <label>Filter by Status:</label>
 
+    <select name="status">
+        <option value="">All Books</option>
+
+        <option value="to-read" {{ ($status ?? '') == 'to-read' ? 'selected' : '' }}>
+            To Read
+        </option>
+
+        <option value="reading" {{ ($status ?? '') == 'reading' ? 'selected' : '' }}>
+            Reading
+        </option>
+
+        <option value="finished" {{ ($status ?? '') == 'finished' ? 'selected' : '' }}>
+            Finished
+        </option>
+    </select>
+
+    <button type="submit">Filter</button>
+</form>
     <a href="{{ route('books.create') }}">Add a New Book</a>
 
     @if(session('success'))
