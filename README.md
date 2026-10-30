@@ -37,7 +37,7 @@ Before running this project, make sure you have installed:
 1. Clone the repository:
 
    ```bash
-   git clone YOUR_GITHUB_REPOSITORY_URL
+   git clone https://github.com/manashree711/reading-list.git
    ```
 
 2. Navigate to the project folder:
