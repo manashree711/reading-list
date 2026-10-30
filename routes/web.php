@@ -15,3 +15,8 @@ Route::get('/books/create', [BookController::class, 'create'])
 
 Route::post('/books', [BookController::class, 'store'])
     ->name('books.store');
+Route::get('/books/{book}/edit', [BookController::class, 'edit'])
+    ->name('books.edit');
+
+Route::put('/books/{book}', [BookController::class, 'update'])
+    ->name('books.update');
