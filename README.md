@@ -24,10 +24,13 @@ A simple Laravel web application to manage books and track reading progress.
 ## Installation and Setup
 
 ### Prerequisites
+
+Before running this project, make sure you have installed:
+
 - PHP
 - Composer
-- Laravel
-- SQLite
+- SQLite support for PHP
+- Git
 
 ### Steps
 
